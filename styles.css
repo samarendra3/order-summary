@@ -1,0 +1,82 @@
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background-color: var(--pale-blue);
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+}
+.main { width: 100%; display: flex; justify-content: center; }
+.container {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px hsla(245, 75%, 52%, 0.1);
+}
+.hero { display: block; width: 100%; }
+.content { padding: 40px 48px 48px; text-align: center; }
+.heading { color: var(--dark-blue); font-size: 28px; font-weight: 900; margin-bottom: 16px; }
+.summary-para { color: var(--desaturated-blue); font-weight: 500; line-height: 1.6; margin-bottom: 24px; }
+.plan {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--very-pale-blue);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.plan-text { flex: 1; }
+.plan-text h3 { color: var(--dark-blue); font-size: 16px; font-weight: 900; }
+.plan-text p { color: var(--desaturated-blue); font-weight: 500; margin-top: 4px; }
+.change-link a { color: var(--bright-blue); font-weight: 700; font-size: 14px; transition: color 0.2s; }
+.change-link a:hover { color: hsl(245, 75%, 70%); text-decoration: none; }
+.proceed-btn, .cancel-order {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.proceed-btn {
+  background-color: var(--bright-blue);
+  color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 15px 20px hsla(245, 75%, 52%, 0.25);
+  margin-bottom: 24px;
+}
+.proceed-btn:hover { background-color: hsl(245, 75%, 67%); }
+.cancel-order { background: none; color: var(--desaturated-blue); font-weight: 900; }
+.cancel-order:hover { color: var(--dark-blue); }
+.attribution { font-size: 11px; text-align: center; color: var(--dark-blue); margin-top: 24px; }
+.attribution a { color: var(--bright-blue); }
+
+@media (max-width: 450px) {
+  body { background-image: url("images/pattern-background-mobile.svg"); }
+  .content { padding: 32px 24px; }
+  .heading { font-size: 22px; }
+  .summary-para, .plan-text p { font-size: 15px; }
+  .plan { padding: 16px; gap: 12px; }
+}
